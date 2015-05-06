@@ -1,0 +1,61 @@
+vanbrabantf_blog_core:
+    resource: "@VanbrabantfBlogCoreBundle/Resources/config/routing.yml"
+    prefix:   /
+
+vanbrabantf_blog_admin:
+    resource: "@VanbrabantfBlogAdminBundle/Resources/config/routing.yml"
+    prefix:   /
+
+vanbrabantf_blog_user:
+    resource: "@VanbrabantfBlogUserBundle/Resources/config/routing.yml"
+    prefix:   /
+
+admin:
+    resource: '@SonataAdminBundle/Resources/config/routing/sonata_admin.xml'
+    prefix: /admin
+    defaults:
+        _format: html
+
+_sonata_admin:
+    resource: .
+    type: sonata_admin
+    prefix: /admin
+    defaults:
+        _format: html
+
+sonata_user:
+    resource: '@SonataUserBundle/Resources/config/routing/admin_security.xml'
+    prefix: /admin
+    defaults:
+        _format: html
+
+sonata_user_security:
+    resource: "@SonataUserBundle/Resources/config/routing/sonata_security_1.xml"
+
+sonata_user_resetting:
+    resource: "@SonataUserBundle/Resources/config/routing/sonata_resetting_1.xml"
+    prefix: /resetting
+    defaults:
+        _format: html
+
+sonata_user_profile:
+    resource: "@SonataUserBundle/Resources/config/routing/sonata_profile_1.xml"
+    prefix: /profile
+    defaults:
+        _format: html
+
+sonata_user_register:
+    resource: "@SonataUserBundle/Resources/config/routing/sonata_registration_1.xml"
+    prefix: /register
+    defaults:
+        _format: html
+
+sonata_user_change_password:
+    resource: "@SonataUserBundle/Resources/config/routing/sonata_change_password_1.xml"
+    prefix: /profile
+    defaults:
+        _format: html
+
+sonata_user_impersonating:
+    pattern: /admin/dashboard
+    defaults: { _controller: SonataAdminBundle:Core:dashboard }

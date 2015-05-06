@@ -1,0 +1,10 @@
+sonata_user:
+    security_acl: false
+    manager_type: orm
+    profile:
+    class:
+        user:   Vanbrabantf\Blog\UserBundle\Entity\User
+        group:  Vanbrabantf\Blog\UserBundle\Entity\Group
+    impersonating:
+        route: sonata_admin_dashboard
+        parameters: { path: / }

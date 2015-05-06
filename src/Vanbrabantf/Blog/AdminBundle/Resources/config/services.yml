@@ -1,0 +1,31 @@
+parameters:
+    # Global admin parameters
+    vanbrabantf_blog_admin.admin.namespace: Vanbrabantf\Blog\AdminBundle\Admin
+    vanbrabantf_blog_admin.admin.bundle.namespace: VanbrabantfBlogAdminBundle
+    vanbrabantf_blog_admin.entity.namespace: Vanbrabantf\Blog\CoreBundle\Entity
+
+    # Default service
+    vanbrabantf_blog_admin.default.controller: 'SonataAdminBundle:CRUD'
+
+    # Groups
+    vanbrabantf_blog_admin.group.general: 'General'
+
+    # Services
+
+    # PostAdmin
+    vanbrabantf_blog_admin.project.class: %vanbrabantf_blog_admin.admin.namespace%\PostAdmin
+    vanbrabantf_blog_admin.project.entity: %vanbrabantf_blog_admin.entity.namespace%\Post
+    vanbrabantf_blog_admin.project.name: Post
+
+services:
+    # Admin classes
+    #
+    # Post
+    vanbrabantf_blog_admin.post:
+        class: %vanbrabantf_blog_admin.project.class%
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: %vanbrabantf_blog_admin.group.general%, label: %vanbrabantf_blog_admin.project.name% }
+        arguments:
+            - ~
+            - %vanbrabantf_blog_admin.project.entity%
+            - ~

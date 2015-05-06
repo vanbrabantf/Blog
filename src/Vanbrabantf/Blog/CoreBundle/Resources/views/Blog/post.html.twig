@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="content-wrapper">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="post-wrapper">
+                    <div class="overview-post">
+                        <a href="{{ path('vanbrabantf_blog_core_article_show', {'id': post.id}) }}">
+                            <h3>
+                                <span class="post-title">{{ post.title }}</span>
+                                <small><span class="post-date text-right">{{ post.createdAt.date|date("d/m/Y")  }}</span></small>
+                            </h3>
+                        </a>
+                        <p><span class="post-intro lead">{{ post.intro }}</span></p>
+                        <p><span class="post-text">{{ post.text }}</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

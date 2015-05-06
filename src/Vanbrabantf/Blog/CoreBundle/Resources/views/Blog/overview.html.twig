@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="content-wrapper">
+        <div class="row">
+            <div class="col-md-12">
+                {% for post in posts['postCollection'] %}
+                    <div class="post-wrapper">
+                        <div class="overview-post">
+                            <a href="{{ path('vanbrabantf_blog_core_article_show', {'id': post.id}) }}">
+                                <h3>
+                                    <span class="post-title">{{ post.title }}</span>
+                                    <small><span class="post-date text-right">{{ post.createdAt.date|date("d/m/Y")  }}</span></small>
+                                </h3>
+                            </a>
+                            <p><span class="post-intro">{{ post.intro }}</span></p>
+                         </div>
+                    </div>
+                {% endfor %}
+
+                <nav>
+                    <div class="text-center">
+                        <ul class="pagination">
+                            {% if page == 0 %}
+                            <li class="disabled">
+                                <a href="#" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+                            {% else %}
+                                <li>
+                                    <a href="{{ path('vanbrabantf_blog_core_homepage', {'page':page - 1}) }}" aria-label="Previous">
+                                        <span aria-hidden="true">&laquo;</span>
+                                    </a>
+                                </li>
+                            {% endif %}
+                            {% if posts.hasNextPage %}
+                                <li>
+                                    <a href="{{ path('vanbrabantf_blog_core_homepage', {'page':page + 1}) }}" aria-label="Next">
+                                        <span aria-hidden="true">&raquo;</span>
+                                    </a>
+                                </li>
+                            {% else %}
+                                <li class="disabled">
+                                    <a href="#" aria-label="Next">
+                                        <span aria-hidden="true">&raquo;</span>
+                                    </a>
+                                </li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+{% endblock %}

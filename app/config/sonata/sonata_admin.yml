@@ -1,0 +1,5 @@
+sonata_admin:
+    title: Blog Example
+    security:
+        handler: sonata.admin.security.handler.role
+    persist_filters:      true

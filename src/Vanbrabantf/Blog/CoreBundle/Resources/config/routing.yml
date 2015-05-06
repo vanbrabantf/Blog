@@ -1,0 +1,7 @@
+vanbrabantf_blog_core_homepage:
+    path:     /{page}
+    defaults: { _controller: VanbrabantfBlogCoreBundle:Blog:index, page: 0 }
+
+vanbrabantf_blog_core_article_show:
+    path:     /article/{id}
+    defaults: { _controller: VanbrabantfBlogCoreBundle:Blog:page}

@@ -1,0 +1,16 @@
+parameters:
+    # Global core parameters
+    vanbrabantf_blog_core.services.namespace: Vanbrabantf\Blog\CoreBundle\Service
+
+    # Services
+    # Post
+    vanbrabantf_blog_core.coaster.class: %vanbrabantf_blog_core.services.namespace%\PostManager
+
+services:
+    # Service classes
+    #
+    # Post
+    vanbrabantf_blog_core.Post:
+        class: %vanbrabantf_blog_core.coaster.class%
+        arguments:
+            - '@doctrine'

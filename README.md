@@ -12,3 +12,9 @@ TODO
     * Some serious front-end love
     * Tests
     * Small bug-fixes
+
+How to install
+----
+
+Install with "composer install".
+Add a user with "php app/console fos:user:create --super-admin".

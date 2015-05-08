@@ -1,4 +1,0 @@
-services:
-#    vanbrabantf_blog_user.example:
-#        class: Vanbrabantf\Blog\UserBundle\Example
-#        arguments: [@service_id, "plain_value", %parameter%]

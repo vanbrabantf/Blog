@@ -17,7 +17,7 @@ class BlogController extends Controller
     public function pageAction($id)
     {
         $postManager    = $this->get("vanbrabantf_blog_core.Post");
-        $post          = $postManager->getPostById((integer)$id);
+        $post           = $postManager->getPostById((integer)$id);
 
         return $this->render('VanbrabantfBlogCoreBundle:Blog:post.html.twig', array('post' => $post));
     }
